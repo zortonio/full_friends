@@ -1,0 +1,43 @@
+body{
+  margin: 0 20px;
+  padding: 0;
+}
+h1{
+  text-align: center;
+}
+table{
+  width: 100%;
+  text-align: left;
+}
+table, th, td{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+#first_name_col, #last_name_col, #email_col{
+  width: 30%;
+}
+#actions_col{
+  width: 10%;
+}
+.augment{
+  display: inline-block;
+}
+#new_friend{
+  margin: 20px 0;
+}
+label{
+  display: block;
+}
+#new_friend label:last-of-type{
+  display: inline-block;
+}
+#friend_button{
+  display: inline-block;
+  margin-left: 30px;
+}
+
+/* --- Edit Page --- */
+#edit_friend{
+  width: 600px;
+  margin: 20px auto;
+}

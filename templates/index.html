@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Full Friends!</title>
+    <link rel="stylesheet" href="{{url_for('static', filename="css/styles.css")}}">
+  </head>
+  <body>
+    <h1>Full Friends</h1>
+    <table>
+      <tr>
+        <th id="first_name_col">First Name</th>
+        <th id="last_name_col">Last Name</th>
+        <th id="email_col">Email</th>
+        <th id="actions_col">Actions</th>
+      </tr>
+      {% for friend in friends %}
+        <tr>
+          <td>{{friend['first_name']}}</td>
+          <td>{{friend['last_name']}}</td>
+          <td>{{friend['email']}}</td>
+          <td>
+            <form action="/friends/{{friend['id']}}/edit" method="post" class="augment">
+              <input type="submit" name="edit" value="Edit">
+            </form>
+            <form action="/friends/{{friend['id']}}/delete" method="post" class="augment">
+              <input type="submit" name="delete" value="Delete">
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+    <form action="/friends" method="post" id="new_friend">
+      <label for="first_name">First Name: <input type="text" name="first_name"></label>
+      <label for="last_name">Last Name: <input type="text" name="last_name"></label>
+      <label for="email">Email: <input type="text" name="email"></label>
+      <input type="submit" name="add" value="Add Friend" id="friend_button">
+    </form>
+  </body>
+</html>
